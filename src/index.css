@@ -12,3 +12,128 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  background-color: #5e6f91;
+  max-height: 15%;
+  min-height: 720px;
+}
+
+.App-logo {
+  width: 15%;
+  align-content: left;
+}
+
+.App-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.shadow:hover {
+  background-color: black;
+  opacity: 0.5;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.hotspot {
+  padding-right: 20%;
+}
+
+.App-header{
+  padding-bottom:5%;
+  
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 10pt;
+  color: white;
+  height: 150px;
+  padding: 20px;
+}
+
+.icons-social a {
+  color: white;
+  font-size: 200%;
+  padding: 2%;
+  float: right;
+}
+.icons-social a:hover {
+  color: gray;
+  font-size: 200%;
+  padding: 2%;
+  float: right;
+}
+.icons-social a svg path {
+  fill: white;
+}
+.icons-social p {
+  color: white;
+  font-size: 100%;
+  padding: 2%;
+  float: left;
+  padding-top: 3%;
+}
+
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(
+    center,
+    ellipse,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  /* W3C */
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before,
+.hvr-float-shadow:focus:before,
+.hvr-float-shadow:active:before {
+  -webkit-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
