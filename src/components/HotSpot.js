@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
+import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import { connect } from "react-redux";
 import { handleDeleteHotspot, handleEditHotspot } from "../actions/hotspots";
 
@@ -37,15 +37,22 @@ class HotSpot extends Component {
     console.log(this.state.title, this.state.text);
     dispatch(handleEditHotspot(this.state.title, this.state.text, id));
   };
+
   render() {
     const { hotspots } = this.props;
     const { text, title, id, x, y } = hotspots;
+
     return (
-      <div className="row">
-        <h3 className="hotspot">{title ? title : "Hotspot   "}</h3>{" "}
-        <Button onClick={this.deleteHotSpot}>Delete</Button>
+      <div>
+        <div className="hotspot row title-delete col-md-3 ">
+          <h3>{title ? title : "Hotspot"}</h3>
+          <button className="botao" onClick={this.deleteHotSpot}>
+            Remove
+          </button>
+        </div>
         <a
-          className="mark btn-floating pulse red"
+          href="#"
+          className="pulse-button"
           id={id}
           style={{
             position: "absolute",
@@ -68,7 +75,9 @@ class HotSpot extends Component {
             ) : (
               <div>
                 <input onChange={this.handleChange("text")} />{" "}
-                <Button onClick={this.editHotspot}>Enviar</Button>
+                <button className="botao" onClick={this.editHotspot}>
+                  Enviar
+                </button>
               </div>
             )}
           </PopoverBody>

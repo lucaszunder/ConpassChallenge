@@ -2,7 +2,6 @@ export const RECEIVE_HOTSPOTS = "RECEIVE_HOTSPOTS";
 export const DELETE_HOTSPOTS = "DELETE_HOTSPOTS";
 export const ADD_HOTSPOT = "ADD_HOTSPOT";
 export const EDIT_HOTSPOT = "EDIT_HOTSPOT";
-
 export function receiveHotSpots(hotspots) {
   return {
     type: RECEIVE_HOTSPOTS,

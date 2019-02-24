@@ -6,7 +6,7 @@ class HotSpots extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="list row">
           {this.props.hotspotsIds.map(id => (
             <li key={id}>
               <HotSpot id={id} />

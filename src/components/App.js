@@ -2,9 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Button } from "reactstrap";
 import HotSpots from "./HotSpots";
-import { formatHotspot } from "../utils/api";
+import { formatHotspot } from "../utils/utils";
 import { handleAddHotspot } from "../actions/hotspots";
 
 class App extends Component {
@@ -12,18 +11,17 @@ class App extends Component {
     editMode: false
   };
 
-  handleChange = e => {
-    {
-      this.state.editMode
-        ? this.setState({ editMode: false })
-        : this.setState({ editMode: true });
-    }
+  handleChange = () => {
+    this.state.editMode
+      ? this.setState({ editMode: false })
+      : this.setState({ editMode: true });
   };
 
   handleClick = e => {
     e.preventDefault();
     const { dispatch } = this.props;
-    let data = formatHotspot(e.clientY, e.clientX);
+    let data = formatHotspot(e.clientY - 10, e.clientX - 10);
+    console.log(e.clientX, e.clientY);
     dispatch(handleAddHotspot(data));
     this.handleChange();
   };
@@ -32,10 +30,7 @@ class App extends Component {
     var x = e.clientX,
       y = e.clientY,
       element = document.elementFromPoint(x, y);
-    element.style.backgroundColor = "#ff6666";
-    element.style.border = "2px, solid, black";
-    element.style.borderStyle = "solid";
-    element.style.borderWidth = "2px";
+    element.style.backgroundColor = "#FFAE50";
     element.style.transitionDuration = "0.4s";
     element.onmouseout = () => {
       element.removeAttribute("style");
@@ -53,12 +48,14 @@ class App extends Component {
             onMouseOver={this.handleover}
           >
             <Header />
-            <div className="container App-body">
+            <div className="wrapper">
+              <div className="title">
+                <h1>Select a place to your new Hotspot</h1>
+              </div>
               <div>
-                <div>
-                  <h1>Select a Place to your Hotspot</h1>
-                </div>
-                <div />
+                <hr />
+
+                <HotSpots />
               </div>
             </div>
             <Footer />
@@ -66,12 +63,15 @@ class App extends Component {
         ) : (
           <div className="App">
             <Header />
-            <div className="container App-body">
-              <div>
-                <Button onClick={this.handleChange}>Create Hotspot</Button>
+            <div className="wrapper">
+              <div className="title">
+                <button className="botao" onClick={this.handleChange}>
+                  Create Hotspot
+                </button>
+                <h1>List of Hotspots</h1>
               </div>
               <div>
-                <h1>List of Hotspots </h1>
+                <hr />
                 <HotSpots />
               </div>
             </div>

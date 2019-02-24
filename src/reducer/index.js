@@ -1,9 +1,6 @@
-import { combineReducers } from 'redux'
-import hotspots from './hotspots'
-import { loadingBarReducer } from 'react-redux-loading'
+import { combineReducers } from "redux";
+import hotspots from "./hotspots";
 
 export default combineReducers({
-    hotspots,
-    loadingBar: loadingBarReducer,
-})
-
+  hotspots
+});

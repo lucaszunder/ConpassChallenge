@@ -21,5 +21,3 @@ export const buildHotspot = (formattedHotspot, title, text) => {
     y: formattedHotspot.y
   };
 };
-
-var Storage = JSON.parse(localStorage.getItem("list_todos")) || [];

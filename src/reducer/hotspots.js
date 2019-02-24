@@ -6,25 +6,21 @@ import {
   EDIT_HOTSPOT
 } from "../actions/hotspots";
 
-export default function hotspots(state = {}, action) {
+export default function hotspots(state = [], action) {
   switch (action.type) {
     case RECEIVE_HOTSPOTS:
-      return {
-        ...state,
-        ...action.hotspots
-      };
+      return state;
     case DELETE_HOTSPOTS:
-      return _.omit(state, action.id);
+      return state.filter(hotspots => state.indexOf(hotspots) != action.id);
     case ADD_HOTSPOT:
-      return {
-        ...state,
-        [action.data.id]: action.data
-      };
+      return state.concat([action.data]);
     case EDIT_HOTSPOT:
-      return {
-        ...state,
-        [action.id]: action
-      };
+      const { title, id, text } = action;
+      return state.map(hotspots =>
+        state.indexOf(hotspots) == action.id
+          ? { ...hotspots, text, title }
+          : hotspots
+      );
     default:
       return state;
   }
