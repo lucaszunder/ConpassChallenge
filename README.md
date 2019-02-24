@@ -1,7 +1,5 @@
 ## Projeto para a vaga da Compass
 
-//remover os pacotes desnecessários
-
 Este projeto foi desenvolvido pelo Developer Lucas Zunder para aprovação na vaga de React Developer na Conpass.
 Consiste basicamete em um app de onboarding para plataformas.
 
