@@ -15,7 +15,7 @@ Em um terminal com Git instalado, basta executar os seguintes comandos:
 
 ```bash
 git clone https://github.com/devzunder/compasschallenge.git
-cd myreads
+cd ConpassChallenge
 npm install
 npm start
 ```
