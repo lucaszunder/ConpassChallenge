@@ -1,7 +1,6 @@
-## Projeto para a vaga da Compass
+## Desafio Técnico Compass
 
-Este projeto foi desenvolvido pelo Developer Lucas Zunder para aprovação na vaga de React Developer na Conpass.
-Consiste basicamete em um app de onboarding para plataformas.
+Este projeto consiste basicamete em um app de onboarding para plataformas.
 
 Permitindo o usuário ao clicar em adicionar um hotspot, inspecionar a tela e posteriormente selecionar um ponto da tela para adicionar um HotSpot.
 
@@ -15,7 +14,7 @@ Em um terminal com Git instalado, basta executar os seguintes comandos:
 
 ```bash
 git clone https://github.com/devzunder/conpasschallenge.git
-cd ConpassChallenge
+cd conpasschallenge
 npm install
 npm start
 ```
