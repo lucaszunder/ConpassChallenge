@@ -13,7 +13,7 @@ Posteriormente abrirá um popover onde o usuário pode escrever um título e con
 Em um terminal com Git instalado, basta executar os seguintes comandos:
 
 ```bash
-git clone https://github.com/devzunder/conpasschallenge.git
+git clone https://github.com/devzunder/conpassclone.git
 cd conpasschallenge
 npm install
 npm start
